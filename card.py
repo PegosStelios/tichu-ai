@@ -3,6 +3,7 @@ import random as random
 totalCards = 0
 existingCards = {}
 existingSpecialCards = {}
+possibleCards = []
 
 suits = [
     'Hearts', 
@@ -61,6 +62,20 @@ cardValues = {
     'unknown': None
 }
 
+# add all possible cards to possibleCards dict
+def allPossibleCombinations():
+    for suit in suits:
+        for card in cardValues:
+            # add the suit and the card to the dict possibleCards
+            # style should be the same for when it was created 
+            # exclude the unknown card
+            # Spades A
+
+            if card != 'unknown':
+                
+                
+allPossibleCombinations()
+print(possibleCards)
 class Card:
     suit = None
     value = None
@@ -78,9 +93,6 @@ class Card:
 
         if self.isValidSuit(suit):
             self.suit = suit
-
-            # only 1 of each suit can exist and up to 4 in total 
-            # so we need to check if the card already exists
             if (suit, value) in existingCards:
                 raise ValueError('Card already exists')
             else:
