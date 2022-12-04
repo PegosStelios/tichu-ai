@@ -66,16 +66,9 @@ cardValues = {
 def allPossibleCombinations():
     for suit in suits:
         for card in cardValues:
-            # add the suit and the card to the dict possibleCards
-            # style should be the same for when it was created 
-            # exclude the unknown card
-            # Spades A
-
-            if card != 'unknown':
-                
-                
-allPossibleCombinations()
-print(possibleCards)
+            # TODO: Find a better way to do this
+            if card != 'unknown' and card != 'Mahjong' and card != 'Dragon' and card != 'Phoenix' and card != 'Dogs':
+                possibleCards.append([suit, card])
 class Card:
     suit = None
     value = None
