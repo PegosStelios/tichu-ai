@@ -1,3 +1,5 @@
+# Path: main.py
+
 import random as random
 
 totalCards = 0
@@ -13,10 +15,10 @@ suits = [
 ]
 
 special = [
-    'Mahjong'
-    'Dragon'
-    'Phoenix'
-    'Dogs'
+    'Mahjong',
+    'Dragon',
+    'Phoenix',
+    'Dogs',
     'unknown'
 ]
 
@@ -69,6 +71,10 @@ def allPossibleCombinations():
             # TODO: Find a better way to do this
             if card != 'unknown' and card != 'Mahjong' and card != 'Dragon' and card != 'Phoenix' and card != 'Dogs':
                 possibleCards.append([suit, card])
+    for specialCard in special:
+        possibleCards.append(["Special", specialCard])
+    if len(possibleCards) > 57:
+        RaiseError("Too many cards generated")
 class Card:
     suit = None
     value = None
