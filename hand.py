@@ -7,6 +7,16 @@ class Hand:
         self.label = n
     def add_card(self, card):
         self.cards.append(card)
+    def generateHand(self):
+        # Add 14 random cards from the possible cards list, make sure there are no duplicates, if there are, remove them and add a new card
+        # Use 
+        for i in range(14):
+            card = c.random.choice(c.possibleCards)
+            while card in self.cards:
+                card = c.random.choice(c.possibleCards)
+            self.cards.append(card)
+        else:
+            return self.cards
     def __str__(self):
         return f'{self.label}: {self.cards}'
     def __repr__(self):

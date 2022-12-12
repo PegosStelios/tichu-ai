@@ -159,7 +159,6 @@ class Card:
 
     def dumpCards(self):
         print(existingCards)
-
 class specialCard:
     value = None
     special = None
